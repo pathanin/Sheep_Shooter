@@ -115,6 +115,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="LeapCSharp.NET3.5">
+      <HintPath>Assets\Plugins\LeapCSharp.NET3.5.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Space Shooter.csproj">
@@ -123,12 +126,103 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LeapMotion\Editor\CustomEditorBase.cs" />
+    <Compile Include="Assets\LeapMotion\Editor\LeapHandControllerEditor.cs" />
+    <Compile Include="Assets\LeapMotion\Editor\LeapImageRetrieverEditor.cs" />
+    <Compile Include="Assets\LeapMotion\Editor\LeapServiceProviderEditor.cs" />
+    <Compile Include="Assets\LeapMotion\Editor\Tests\FrameValidator.cs" />
+    <Compile Include="Assets\LeapMotion\Editor\Tests\HandFactoryTest.cs" />
+    <Compile Include="Assets\LeapMotion\Editor\Tests\TransformCopyTest.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\Algorithms\Editor\Tests\SlidingMaxTest.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\Attributes\Editor\CombinablePropertyDrawer.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\DataStructures\Editor\SerializableDictionaryEditor.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\DataStructures\Editor\Tests\MinHeapTest.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\DataStructures\Editor\Tests\ProduceConsumeBufferTest.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\DataStructures\Editor\Tests\RingBufferTest.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\VR\Editor\EyeTypeEditor.cs" />
+    <Compile Include="Assets\LeapMotion\Scripts\VR\Editor\LeapTemporalWarpingEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\Attachments\Editor\TransitionEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\Hands\Scripts\Editor\LeapHandsAutoRigEditor.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Editor\PyroParticlesEditor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\TutorialInfoEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\LeapMotion\Dependencies.txt" />
+    <None Include="Assets\LeapMotion\README_BEFORE_UPDATING.txt" />
+    <None Include="Assets\LeapMotion\Resources\LeapCG.cginc" />
+    <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
+    <None Include="Assets\LeapMotion\Resources\PassthroughForeground.shader" />
+    <None Include="Assets\LeapMotion\Resources\RuntimeGizmos.shader" />
+    <None Include="Assets\LeapMotion\Resources\ThresholdOverlay.shader" />
+    <None Include="Assets\LeapMotion\Resources\VertexOffsetShader.shader" />
+    <None Include="Assets\LeapMotion\Version.txt" />
+    <None Include="Assets\LeapMotion\readme.txt" />
+    <None Include="Assets\LeapMotionModules\DetectionExamples\Shaders\LeapPinchLine.shader" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-D-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-H-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-I-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-N-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-P-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-T-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-X-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-arrowhead-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-asterisk-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-exclamation_point-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-five_point_star-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-half_note-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-line-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-null-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-pitchfork-01.xml" />
+    <None Include="Assets\PDollar\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-six_point_star-01.xml" />
+    <None Include="Assets\Plugins\donotdelete.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\PyroParticles\Readme.txt" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-D-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-H-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-I-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-N-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-P-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-T-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-X-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-arrowhead-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-asterisk-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-exclamation_point-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-five_point_star-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-half_note-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-line-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-null-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-pitchfork-01.xml" />
+    <None Include="Assets\Resources\GestureSet\10-stylus-MEDIUM\10-stylus-medium-six_point_star-01.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\10-stylus-medium-five_point_star-01.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314458592981274.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314458651700769.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314458756335250.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314458866959403.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314458929272027.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314458968101604.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459155977125.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459195307929.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459271983534.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459365652576.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459452528638.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459536964033.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459620308494.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459717884920.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459797698509.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459894284112.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459949446759.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314459993846300.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460086078464.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460124681093.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460180975017.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460225914069.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460315112208.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460367353609.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460432604857.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460494042821.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460599218454.xml" />
+    <None Include="Assets\Resources\GestureSet\custom\O-131314460956123973.xml" />
+    <None Include="Assets\Resources\TransparentFresnel.shader" />
     <None Include="Assets\TutorialInfo\Fonts\LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

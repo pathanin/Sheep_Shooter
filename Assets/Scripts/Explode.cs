@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Explode : MonoBehaviour {
 
+    public GameObject explosion;
     public LayerMask m_SheepMask;
     public ParticleSystem m_ExplosionParticles;
+    public ParticleSystem FireShrapnel;
     public AudioSource m_ExplosionAudio;
     public float m_ExplosionForce = 1000f;
     public float m_MaxLifeTime = 6f;
@@ -19,6 +21,7 @@ public class Explode : MonoBehaviour {
     {
         Destroy(gameObject, m_MaxLifeTime);
         GameObject gameCOntrollerObject = GameObject.FindWithTag("GameController");
+        m_ExplosionAudio = GetComponent<AudioSource>();
         if (gameCOntrollerObject != null)
         {
             gameController = gameCOntrollerObject.GetComponent<GameController>();
@@ -36,6 +39,7 @@ public class Explode : MonoBehaviour {
             return;
         // Find all the sheep in an area around the bolt and damage them.
         //Debug.Log("Heyy");
+
         Collider[] colliders = Physics.OverlapSphere(other.transform.position, m_ExplosionRadius);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -47,6 +51,7 @@ public class Explode : MonoBehaviour {
             }
             targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
             gameController.AddScore(scoreValue);
+            Instantiate(explosion, transform.position, transform.rotation);
             Destroy(colliders[i].gameObject);
             Debug.Log("Destroy by Explosion");
 
@@ -54,8 +59,16 @@ public class Explode : MonoBehaviour {
 
         m_ExplosionParticles.transform.parent = null;
         m_ExplosionParticles.Play();
+        // if has Audio
+        //m_ExplosionAudio.Play();
 
         Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.duration);
+
+        // second explosion particle
+        FireShrapnel.transform.parent = null;
+        FireShrapnel.Play();
+
+        Destroy(FireShrapnel.gameObject, FireShrapnel.duration);
         Destroy(gameObject);
         //Destroy(other.gameObject);
         gameController.AddScore(scoreValue);

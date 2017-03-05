@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 
 	private Rigidbody rigidbody;
 	private AudioSource audioSource;
-	private float nextFire;
+    private float nextFire;
     private FireBaseScript currentPrefabScript;
     private GameObject currentPrefabObject;
 
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
             Instantiate(shot, point, shotSpawn.rotation);
             point.y -= 0.2f;
             Instantiate(shot, point, shotSpawn.rotation);
-            audioSource.Play();
+            //audioSource.Play();
 		}
         if (Input.GetMouseButtonDown(1) && Time.time > nextFire)
         {
@@ -59,11 +59,7 @@ public class PlayerController : MonoBehaviour {
             */
             Debug.Log("World point " + point);
             Instantiate(explosiveShot, point, shotSpawn.rotation);
-            point.y += 0.1f;
-            Instantiate(explosiveShot, point, shotSpawn.rotation);
-            point.y -= 0.2f;
-            Instantiate(explosiveShot, point, shotSpawn.rotation);
-            audioSource.Play();
+            //audioSource2.Play();
         }
     }
 
@@ -86,5 +82,6 @@ public class PlayerController : MonoBehaviour {
 	void Start(){
 		rigidbody = GetComponent<Rigidbody> ();
 		audioSource = GetComponent<AudioSource> ();
-	}
+        
+    }
 }
