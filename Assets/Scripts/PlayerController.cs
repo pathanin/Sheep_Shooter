@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Bound{
+public class Bound
+{
 	public float xMin, xMax, zMin, zMax;
 }
 
