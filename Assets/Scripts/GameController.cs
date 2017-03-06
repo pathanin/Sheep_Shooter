@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
 	public float spawnWait;
 	public float waveWait;
     public int lifepoint;
+    public int winScore;
 
     public GUIText scoreText;
 	private int score;
@@ -71,7 +72,7 @@ public class GameController : MonoBehaviour {
     public void AddScore(int newScoreValue){
 		score += newScoreValue;
 		UpdateScore ();
-        if (score >= 10) Win();
+        if (score >= winScore) Win();
 	}
     public void ReduceScore(int newScoreValue)
     {

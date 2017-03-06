@@ -123,11 +123,6 @@ public class GestureManager : MonoBehaviour {
                 point.z -= 10;
                 // Debug.Log("World point " + point);
                 Instantiate(shot, point, shotSpawn.rotation);
-                point.y += 0.1f;
-                Instantiate(shot, point, shotSpawn.rotation);
-                point.y -= 0.2f;
-                Instantiate(shot, point, shotSpawn.rotation);
-                audioSource.Play();
                 break;
             case "five point star":
                 ray = Camera.main.ScreenPointToRay(centroid);
@@ -136,11 +131,7 @@ public class GestureManager : MonoBehaviour {
                 point.z -= 10;
                 // Debug.Log("World point " + point);
                 Instantiate(explosiveShot, point, shotSpawn.rotation);
-                point.y += 0.1f;
-                Instantiate(explosiveShot, point, shotSpawn.rotation);
-                point.y -= 0.2f;
-                Instantiate(explosiveShot, point, shotSpawn.rotation);
-                audioSource.Play();
+                // audioSource.Play();
                 break;
 		    default: break;
 		}

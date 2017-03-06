@@ -10,7 +10,7 @@ public class ShotRotator : MonoBehaviour {
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        Vector3 point = new Vector3(0,0, UnityEngine.Random.Range(-0.9f,0.9f ));
+        Vector3 point = new Vector3(0,0, UnityEngine.Random.Range(-0.9f,-0.5f ));
         rigidbody.angularVelocity = point * tumble;
     }
 
