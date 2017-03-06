@@ -39,7 +39,7 @@ public class Explode : MonoBehaviour {
             return;
         // Find all the sheep in an area around the bolt and damage them.
         //Debug.Log("Heyy");
-
+        int temp = 0;
         Collider[] colliders = Physics.OverlapSphere(other.transform.position, m_ExplosionRadius);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -50,11 +50,11 @@ public class Explode : MonoBehaviour {
                 continue;
             }
             targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
-            gameController.AddScore(scoreValue);
+            //gameController.AddScore(scoreValue);
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(colliders[i].gameObject);
             Debug.Log("Destroy by Explosion");
-
+            temp = i-1;
         }
 
         m_ExplosionParticles.transform.parent = null;
@@ -71,7 +71,7 @@ public class Explode : MonoBehaviour {
         Destroy(FireShrapnel.gameObject, FireShrapnel.duration);
         Destroy(gameObject);
         //Destroy(other.gameObject);
-        gameController.AddScore(scoreValue);
+        gameController.AddScore(scoreValue*temp);
         //Debug.Log("Destroy sheep22222");
 
     }

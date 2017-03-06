@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour {
     public void AddScore(int newScoreValue){
 		score += newScoreValue;
 		UpdateScore ();
+        if (score >= 10) Win();
 	}
     public void ReduceScore(int newScoreValue)
     {
@@ -96,6 +97,11 @@ public class GameController : MonoBehaviour {
 		gameoverText.text = "Game Over!";
 		gameover = true;
 	}
+    public void Win()
+    {
+        gameoverText.text = "You Win!";
+        gameover = true;
+    }
     public bool isGameOver()
     {
         return gameover;

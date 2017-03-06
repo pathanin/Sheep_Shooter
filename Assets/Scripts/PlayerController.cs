@@ -40,11 +40,13 @@ public class PlayerController : MonoBehaviour {
             */
             Debug.Log("World point " + point);
             Instantiate(shot, point, shotSpawn.rotation);
+            /*
             point.y += 0.1f;
             Instantiate(shot, point, shotSpawn.rotation);
             point.y -= 0.2f;
             Instantiate(shot, point, shotSpawn.rotation);
             //audioSource.Play();
+            */
 		}
         if (Input.GetMouseButtonDown(1) && Time.time > nextFire)
         {
